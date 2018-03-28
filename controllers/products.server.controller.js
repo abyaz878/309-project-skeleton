@@ -14,7 +14,7 @@ module.exports.listView = function(req, res) {
     } else {
       console.log("api called");
 
-      res.render('./../public/views/product/all.ejs', {
+      res.render('./../public/views/products/all.ejs', {
   		user: req.user || null,
   		products: data
   });;
@@ -23,7 +23,15 @@ module.exports.listView = function(req, res) {
 };
 
 module.exports.singleView = function(req, res) {
-  res.render('./../public/views/product/view.ejs', {
+  res.render('./../public/views/product/new.ejs', {
+  		user: req.user || null,
+  		request: req
+  });
+
+}
+
+module.exports.createView = function(req, res) {
+  res.render('./../public/views/product/create.ejs', {
   		user: req.user || null,
   		request: req
   });
